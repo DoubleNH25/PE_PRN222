@@ -68,34 +68,7 @@ namespace LionPetManagement_NguyenHangNhatHuy.BLL
 			_unitOfWork.Save();
 		}
 
-		public async Task<List<LionProfile>> SearchLionsAsync(string? lionName, string? lionTypeName, string? weight)
-		{
-			var query = _unitOfWork.GetRepository<LionProfile>().GetFiltered(null, null);
-
-			if (!string.IsNullOrEmpty(lionName))
-			{
-				query = query.Where(m => m.LionName.Contains(lionName));
-			}
-			if (!string.IsNullOrEmpty(lionTypeName))
-			{
-				query = query.Where(m => m.LionType.LionTypeName.Contains(lionTypeName));
-			}
-			if (!string.IsNullOrEmpty(weight))
-			{
-				if (double.TryParse(weight, out double weights))
-				{
-					query = query.Where(m => m.Weight == weights);
-				}
-				else
-				{
-					query = query.Where(m => m.Weight.ToString().Contains(weight));
-				}
-			}
-
-			return await query
-					.Include(m => m.LionType)
-					.ToListAsync();
-		}
+		
 
 		public async Task<(List<LionProfile> Items, int TotalItems)> SearchLionsWithPaginationAsync(string? lionName, string? lionTypeName, string? weight, int pageNumber, int pageSize)
 		{
