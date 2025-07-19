@@ -1,12 +1,13 @@
 using LionPetManagement_NguyenHangNhatHuy.BLL;
-using LionPetManagement_NguyenHangNhatHuy.DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using LionProfileModel = LionPetManagement_NguyenHangNhatHuy.DAL.Models.LionProfile;
 
 namespace LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile
 {
-    public class SearchModel : PageModel
+	[Authorize(Roles = "2, 3")]
+	public class SearchModel : PageModel
     {
         private readonly LionProfileService _lionProfileService;
 

@@ -1,12 +1,13 @@
 using LionPetManagement_NguyenHangNhatHuy.BLL;
-using LionPetManagement_NguyenHangNhatHuy.DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.SignalR;
 
 namespace LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile
 {
-    public class DeleteModel : PageModel
+	[Authorize(Roles = "2")]
+	public class DeleteModel : PageModel
     {
         private readonly LionProfileService _lionProfileService;
         private readonly IHubContext<LionPetManagement_NguyenHangNhatHuy.LionProfileHub> _hubContext;

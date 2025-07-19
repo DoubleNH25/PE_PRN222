@@ -1,10 +1,10 @@
 using LionPetManagement_NguyenHangNhatHuy.BLL;
-using LionPetManagement_NguyenHangNhatHuy.DAL.Models;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile
 {
+	[Authorize(Roles = "2, 3")]
 	public class IndexModel : PageModel
 	{
 		private readonly LionProfileService _lionProfileService;
