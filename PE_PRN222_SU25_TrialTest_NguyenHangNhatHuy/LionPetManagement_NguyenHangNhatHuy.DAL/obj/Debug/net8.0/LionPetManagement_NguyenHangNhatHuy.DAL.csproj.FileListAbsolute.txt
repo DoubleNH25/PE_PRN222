@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\bin\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.deps.json
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\bin\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.runtimeconfig.json
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\bin\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.dll
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\bin\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.pdb
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.AssemblyInfo.cs
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.dll
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\refint\LionPetManagement_NguyenHangNhatHuy.DAL.dll
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.pdb
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\LionPetManagement_NguyenHangNhatHuy.DAL.genruntimeconfig.cache
+C:\Users\Admin\source\repos\PE_PRN222_SU25_TrialTest_NguyenHangNhatHuy\LionPetManagement_NguyenHangNhatHuy.DAL\obj\Debug\net8.0\ref\LionPetManagement_NguyenHangNhatHuy.DAL.dll

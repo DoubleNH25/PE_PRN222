@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LionPetManagement_NguyenHangNhatHuy.props" />
+</Project>
