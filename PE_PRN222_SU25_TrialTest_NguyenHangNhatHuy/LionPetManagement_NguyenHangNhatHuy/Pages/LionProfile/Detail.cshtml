@@ -1,5 +1,5 @@
 ﻿@page
-@model LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile.DetailsModel
+@model LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile.DetailModel
 @{
     ViewData["Title"] = "Lion Details";
 }
@@ -38,8 +38,8 @@
                 <div class="d-flex justify-content-end">
                     @if (User.IsInRole("2"))
                     {
-                        <a asp-page="./Edit" asp-route-id="@Model.lionProfile.LionProfileId"
-                           class="btn btn-warning me-2">Edit</a>
+                        <a asp-page="./Update" asp-route-id="@Model.lionProfile.LionProfileId"
+                           class="btn btn-warning me-2">Update</a>
                     }
                     <a asp-page="Index" class="btn btn-secondary">Back</a>
                 </div>

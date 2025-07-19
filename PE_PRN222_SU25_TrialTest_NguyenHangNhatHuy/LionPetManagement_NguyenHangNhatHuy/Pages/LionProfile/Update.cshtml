@@ -1,7 +1,7 @@
 ﻿@page
-@model LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile.EditModel
+@model LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile.UpdateModel
 @{
-    ViewData["Title"] = "Edit Lion Profile";
+    ViewData["Title"] = "Update Lion Profile";
 }
 
 <div class="container mt-4">
@@ -10,7 +10,7 @@
         <hr />
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+
             <input type="hidden" asp-for="LionProfile.LionProfileId" />
             <input type="hidden" asp-for="LionProfile.ModifiedDate" />
 
@@ -58,3 +58,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+

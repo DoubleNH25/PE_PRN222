@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile
 {
-	public class DetailsModel : PageModel
+	public class DetailModel : PageModel
 	{
 		private readonly LionProfileService _lionProfileService;
 
-		public DetailsModel(LionProfileService lionProfileService)
+		public DetailModel(LionProfileService lionProfileService)
 		{
 			_lionProfileService = lionProfileService;
 		}
