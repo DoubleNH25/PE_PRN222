@@ -12,24 +12,15 @@
     {
         <div class="d-flex justify-content-between mb-3">
             <a asp-page="./Create" class="btn btn-success">Create New</a>
+            <a asp-page="./Search" class="btn btn-primary">Search Lions</a>
         </div>
     }
-    <div class="card p-3 mb-4 shadow-sm">
-        <form method="get" class="row g-2">
-            <div class="col-md-4">
-                <input type="text" id="SearchLionName" name="SearchLionName" class="form-control" placeholder="Lion Name" value="@Model.SearchLionName" />
-            </div>
-            <div class="col-md-4">
-                <input type="text" id="SearchLionTypeName" name="SearchLionTypeName" class="form-control" placeholder="Lion Type Name" value="@Model.SearchLionTypeName" />
-            </div>
-            <div class="col-md-4">
-                <input type="text" id="SearchLionWeight" name="SearchLionWeight" class="form-control" placeholder="Weight" value="@Model.SearchLionWeight" />
-            </div>
-            <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-        </form>
-    </div>
+    else
+    {
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-page="./Search" class="btn btn-primary">Search Lions</a>
+        </div>
+    }
 
 
     <div class="card shadow-sm">
@@ -80,18 +71,12 @@
     <div class="d-flex justify-content-center align-items-center mt-3">
         <a asp-page="Index"
            asp-route-pageNumber="@(Model.PageNumber > 1 ? Model.PageNumber - 1 : 1)"
-           asp-route-searchActiveIngredients="@Model.SearchLionName"
-           asp-route-searchExpirationDate="@Model.SearchLionTypeName"
-           asp-route-searchWarnings="@Model.SearchLionWeight"
            class="btn btn-outline-secondary @(Model.PageNumber == 1 ? "disabled" : "")">Previous</a>
 
-        <span class="mx-3">Page @Model.PageNumber of @Model.TotalPages</span>
+        <span class="mx-3">Page @Model.PageNumber of @Model.TotalPages (@Model.TotalItems total items)</span>
 
         <a asp-page="Index"
            asp-route-pageNumber="@(Model.PageNumber < Model.TotalPages ? Model.PageNumber + 1 : Model.TotalPages)"
-           asp-route-searchActiveIngredients="@Model.SearchLionName"
-           asp-route-searchExpirationDate="@Model.SearchLionTypeName"
-           asp-route-searchWarnings="@Model.SearchLionWeight"
            class="btn btn-outline-secondary @(Model.PageNumber == Model.TotalPages ? "disabled" : "")">Next</a>
     </div>
 </div>

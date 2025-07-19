@@ -1,0 +1,104 @@
+@page
+@model LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile.SearchModel
+@{
+    ViewData["Title"] = "Search Lions";
+}
+
+<div class="container mt-4">
+    <h2>Search Lions</h2>
+    
+    <form method="get" class="mb-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="SearchLionName">Lion Name</label>
+                    <input type="text" id="SearchLionName" name="SearchLionName" class="form-control" placeholder="Lion Name" value="@Model.SearchLionName" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="SearchLionTypeName">Lion Type Name</label>
+                    <input type="text" id="SearchLionTypeName" name="SearchLionTypeName" class="form-control" placeholder="Lion Type Name" value="@Model.SearchLionTypeName" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="SearchLionWeight">Weight</label>
+                    <input type="text" id="SearchLionWeight" name="SearchLionWeight" class="form-control" placeholder="Weight" value="@Model.SearchLionWeight" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn btn-primary form-control">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    @if (Model.Lions != null && Model.Lions.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Lion Name</th>
+                        <th>Lion Type</th>
+                        <th>Weight</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var lion in Model.Lions)
+                    {
+                        <tr>
+                            <td>@lion.LionName</td>
+                            <td>@lion.LionType?.LionTypeName</td>
+                            <td>@lion.Weight</td>
+                            <td>
+                                <a asp-page="./Detail" asp-route-id="@lion.LionProfileId" class="btn btn-info btn-sm">View</a>
+                                @if (User.IsInRole("2"))
+                                {
+                                    <a asp-page="./Update" asp-route-id="@lion.LionProfileId" class="btn btn-warning btn-sm">Update</a>
+                                    <a asp-page="./Delete" asp-route-id="@lion.LionProfileId" class="btn btn-danger btn-sm">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @if (Model.TotalPages > 1)
+        {
+            <div class="d-flex justify-content-center align-items-center mt-3">
+                <a asp-page="./Search"
+                   asp-route-pageNumber="@(Model.PageNumber > 1 ? Model.PageNumber - 1 : 1)"
+                   asp-route-SearchLionName="@Model.SearchLionName"
+                   asp-route-SearchLionTypeName="@Model.SearchLionTypeName"
+                   asp-route-SearchLionWeight="@Model.SearchLionWeight"
+                   class="btn btn-outline-secondary @(Model.PageNumber == 1 ? "disabled" : "")">Previous</a>
+
+                <span class="mx-3">Page @Model.PageNumber of @Model.TotalPages (@Model.TotalItems total items)</span>
+
+                <a asp-page="./Search"
+                   asp-route-pageNumber="@(Model.PageNumber < Model.TotalPages ? Model.PageNumber + 1 : Model.TotalPages)"
+                   asp-route-SearchLionName="@Model.SearchLionName"
+                   asp-route-SearchLionTypeName="@Model.SearchLionTypeName"
+                   asp-route-SearchLionWeight="@Model.SearchLionWeight"
+                   class="btn btn-outline-secondary @(Model.PageNumber == Model.TotalPages ? "disabled" : "")">Next</a>
+            </div>
+        }
+    }
+    else if (Model.SearchLionName != null || Model.SearchLionTypeName != null || Model.SearchLionWeight != null)
+    {
+        <div class="alert alert-info">
+            No lions found matching your search criteria.
+        </div>
+    }
+
+    <div class="mt-3">
+        <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+        <a asp-page="./Create" class="btn btn-success">Create New</a>
+    </div>
+</div> 

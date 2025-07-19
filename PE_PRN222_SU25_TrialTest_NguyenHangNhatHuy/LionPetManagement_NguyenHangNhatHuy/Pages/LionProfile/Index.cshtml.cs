@@ -17,24 +17,16 @@ namespace LionPetManagement_NguyenHangNhatHuy.Pages.LionProfile
 		public IList<LionPetManagement_NguyenHangNhatHuy.DAL.Models.LionProfile?> LionProfile { get; set; } = default!;
 		public int PageNumber { get; set; } = 1;
 		public int TotalPages { get; set; }
+		public int TotalItems { get; set; }
 
-		//Search
-		public string? SearchLionName { get; set; }
-		public string? SearchLionTypeName { get; set; }
-		public string? SearchLionWeight { get; set; }
-
-		public async Task OnGetAsync(int pageNumber = 1, int pageSize = 3, string? searchLionName = null, string? searchLionTypeName = null, string? searchLionWeight = null)
+		public async Task OnGetAsync(int pageNumber = 1, int pageSize = 3)
 		{
 			PageNumber = pageNumber;
-			SearchLionName = searchLionName;
-			SearchLionTypeName = searchLionTypeName;
-			SearchLionWeight = searchLionWeight;
 
 			int totalItems;
+			LionProfile = _lionProfileService.GetList(pageNumber, pageSize, out totalItems, null, null, null);
 
-
-			LionProfile = _lionProfileService.GetList(pageNumber, pageSize, out totalItems, searchLionName, searchLionTypeName, searchLionWeight);
-
+			TotalItems = totalItems;
 			TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
 
 			if (PageNumber > TotalPages && TotalPages > 0)
