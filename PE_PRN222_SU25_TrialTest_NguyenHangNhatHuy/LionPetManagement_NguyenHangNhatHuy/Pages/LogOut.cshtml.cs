@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace LionPetManagement_NguyenHangNhatHuy.Pages.User
+namespace LionPetManagement_NguyenHangNhatHuy.Pages
 {
 	public class LogOutModel : PageModel
 	{
@@ -15,7 +15,7 @@ namespace LionPetManagement_NguyenHangNhatHuy.Pages.User
 				Response.Cookies.Delete(cookie);
 			}
 
-			return RedirectToPage("/User/Login");
+			return RedirectToPage("/Login");
 		}
 	}
 }

@@ -23,8 +23,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 			  .AddCookie(options =>
 			  {
-				  options.LoginPath = "/User/Login";
-				  options.LogoutPath = "/User/Logout";
+				  options.LoginPath = "/Login";
+				  options.LogoutPath = "/Logout";
 			  });
 
 builder.Services.AddSignalR();
@@ -50,7 +50,7 @@ app.Use(async (context, next) =>
 {
     if (context.Request.Path == "/" && !context.User.Identity.IsAuthenticated)
     {
-        context.Response.Redirect("/User/Login");
+        context.Response.Redirect("Login");
         return;
     }
     await next();

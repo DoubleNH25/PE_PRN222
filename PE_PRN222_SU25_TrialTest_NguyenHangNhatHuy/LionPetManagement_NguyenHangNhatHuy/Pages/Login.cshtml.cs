@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Security.Claims;
 
-namespace LionPetManagement_NguyenHangNhatHuy.Pages.User
+namespace LionPetManagement_NguyenHangNhatHuy.Pages
 {
 	public class LoginModel : PageModel
 	{
